@@ -108,7 +108,7 @@ export default function AboutPage() {
         {/* Footer Note */}
         <div className="text-center mt-16 pt-8 border-t border-border-subtle">
           <p className="text-text-muted italic">
-            "We are such stuff as dreams are made on, and our little life is rounded with a sleep."
+            &ldquo;We are such stuff as dreams are made on, and our little life is rounded with a sleep.&rdquo;
           </p>
           <p className="text-text-muted text-sm mt-2">
             — William Shakespeare, The Tempest
