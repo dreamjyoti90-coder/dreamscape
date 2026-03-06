@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\")",
+      "Bash(npm install)",
+      "Bash(npm install --legacy-peer-deps)",
+      "Bash(npm run dev)",
+      "Bash(npx sanity dataset create production)",
+      "Bash(npx sanity login)",
+      "Bash(npx sanity dataset list)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(curl -I https://wa14435d.api.sanity.io/v2021-06-07/users/me)",
+      "Bash(curl -v https://wa14435d.api.sanity.io/v2021-06-07/data/query/production?query=*[_type==\"dreamPost\"][0])",
+      "Bash(curl \"https://wa14435d.api.sanity.io/v2021-06-07/data/query/production?query=*\")",
+      "Bash(npm create sanity@latest -- --project wal4435d --dataset production --template clean)",
+      "Bash(npm create sanity@latest -- --dataset production --template clean --create-project \"Dreamscape\")",
+      "Bash(git init)",
+      "Bash(gh repo create dreamscape --public --source=\"c:\\Users\\Admin\\Documents\\dream\" --description=\"A beautiful dream journal platform built with Next.js and Sanity CMS\")",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

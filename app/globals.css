@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #0a0a1a;
+  --bg-elevated: #111132;
+  --bg-glass: rgba(17, 17, 50, 0.6);
+  --accent-primary: #7c3aed;
+  --accent-glow: #a78bfa;
+  --accent-moon: #fbbf24;
+  --text-primary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-heading: #f1f5f9;
+  --border-subtle: rgba(124, 58, 237, 0.2);
+  --star-color: #ffffff;
+  --cloud-color: rgba(148, 163, 184, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.75;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+  color: var(--text-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Star twinkle animations */
+@keyframes twinkle-1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes twinkle-2 {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes twinkle-3 {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.1; }
+}
+
+/* Cloud drift animation */
+@keyframes drift {
+  0% { transform: translateX(-100vw); }
+  100% { transform: translateX(100vw); }
+}
+
+/* Shooting star animation */
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-300px, 300px);
+  }
+}
