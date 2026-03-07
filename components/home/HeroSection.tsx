@@ -1,6 +1,5 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function HeroSection() {
@@ -80,15 +79,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        onClick={scrollToContent}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-text-muted hover:text-accent-primary transition-colors cursor-pointer"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <ChevronDown className="w-8 h-8" />
-      </motion.button>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { client } from '@/lib/sanity.client'
 import { featuredDreamPostsQuery, recentDreamPostsQuery } from '@/lib/sanity.queries'
 import HeroSection from '@/components/home/HeroSection'
+import AboutSection from '@/components/home/AboutSection'
 import FeaturedDreams from '@/components/home/FeaturedDreams'
 import RecentFeed from '@/components/home/RecentFeed'
 
@@ -33,6 +34,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
+      <AboutSection />
       {featuredDreams.length > 0 && <FeaturedDreams dreams={featuredDreams} />}
       {recentDreams.length > 0 && <RecentFeed dreams={recentDreams} />}
     </>
