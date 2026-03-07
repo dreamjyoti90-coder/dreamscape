@@ -9,38 +9,21 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
-      {/* Moon decoration */}
-      <div className="absolute top-20 right-10 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
-        <div className="relative w-full h-full">
-          <div
-            className="absolute inset-0 rounded-full bg-accent-moon opacity-20 blur-3xl"
-            style={{
-              boxShadow: '0 0 80px 40px rgba(251, 191, 36, 0.3)',
-            }}
-          />
-          <svg
-            viewBox="0 0 100 100"
-            className="absolute inset-0 w-full h-full"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="var(--accent-moon)"
-              opacity="0.9"
-            />
-            <circle
-              cx="60"
-              cy="50"
-              r="35"
-              fill="var(--bg-deep)"
-            />
-          </svg>
-        </div>
-      </div>
+    <section
+      className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/hero.webp')" }}
+    >
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-bg-deep/60" aria-hidden />
+
+      {/* Bottom fade into next section */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-40 md:h-56 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, var(--bg-deep) 0%, transparent 100%)',
+        }}
+        aria-hidden
+      />
 
       {/* Hero content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
