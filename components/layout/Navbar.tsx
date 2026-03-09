@@ -49,16 +49,6 @@ export default function Navbar() {
               >
                 Dreams
               </Link>
-              <Link
-                href="/about"
-                className={`text-sm font-medium transition-colors ${
-                  isActive('/about')
-                    ? 'text-accent-primary'
-                    : 'text-text-muted hover:text-text-primary'
-                }`}
-              >
-                About
-              </Link>
             </div>
           </div>
         </div>

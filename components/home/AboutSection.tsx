@@ -61,25 +61,20 @@ export default function AboutSection() {
             transition={{ ...stagger.transition, delay: 0.1 }}
             className="text-2xl md:text-3xl font-serif text-text-heading mb-6 text-center"
           >
-            About the Author
+            About Me
           </motion.h3>
           <div className="text-text-muted text-lg md:text-xl leading-relaxed space-y-6 text-center max-w-2xl mx-auto">
             {[
               <>
-                <span className="text-text-heading font-medium">Jyoti Kumari</span> is
-                the creator behind Dreamscape. She believes that dreams are more than
-                fragments of the night—they&apos;re stories waiting to be told, and
-                sometimes the most honest ones we have.
+                Hi, I&apos;m <span className="text-text-heading font-medium">Jyoti</span>. Sit tight — let&apos;s be friends, and let me tell you my stories — one piece at a time.
               </>,
+              <>Not all of my stories belong to the hours I am awake.</>,
               <>
-                This journal is her way of honouring those stories: recording her own,
-                and opening a space for others to share and discover the strange,
-                beautiful, and sometimes unsettling worlds we visit when we close our
-                eyes.
+                I&apos;m an adventurous soul, drawn to new beginnings, unfamiliar paths, and the experiences that quietly shape who I am becoming. I move through life with curiosity and courage, always ready to explore what lies beyond the familiar.
               </>,
+              <>Some parts of my journey are easy to explain. Others remain just out of reach.</>,
               <>
-                When she&apos;s not writing or curating dreams, you might find her
-                under the stars—awake or asleep—chasing the next one worth keeping.
+                There are memories, feelings, and places I visit when I sleep — as if a part of me continues elsewhere. This space is where I follow those traces, one story at a time.
               </>,
             ].map((content, i) => (
               <motion.p
