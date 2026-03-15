@@ -91,7 +91,7 @@ export default async function DreamPostPage({ params }: PageProps) {
     ? urlFor(dream.coverImage).width(1920).height(1080).url()
     : null
 
-  const authorAvatarUrl = dream.author?.avatar?.asset
+  const authorAvatarUrl = dream.author?.avatar?.asset?._ref
     ? urlFor(dream.author.avatar).width(100).height(100).url()
     : null
 

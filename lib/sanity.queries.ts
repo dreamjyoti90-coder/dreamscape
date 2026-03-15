@@ -15,9 +15,7 @@ const dreamPostFields = groq`
   "author": author->{
     name,
     slug,
-    avatar {
-      asset->
-    }
+    avatar
   }
 `
 
