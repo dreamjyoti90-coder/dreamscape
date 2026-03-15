@@ -10,10 +10,12 @@ interface Dream {
   title: string
   slug: { current: string }
   excerpt?: string
+  publishedAt: string
+  coverImage?: any
   dreamType?: string
   dreamMood?: string
+  featured?: boolean
   tags?: string[]
-  [key: string]: any
 }
 
 interface DreamsClientProps {
