@@ -48,18 +48,6 @@ export default function HeroSection() {
           A journal of dreams beneath the stars
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <button
-            onClick={scrollToContent}
-            className="inline-flex items-center space-x-2 px-8 py-3 rounded-button bg-accent-primary hover:bg-accent-glow text-white font-medium transition-all hover:shadow-lg hover:shadow-accent-primary/50 hover:scale-105"
-          >
-            <span>Explore Dreams</span>
-          </button>
-        </motion.div>
       </div>
 
     </section>
