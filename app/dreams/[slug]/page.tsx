@@ -39,28 +39,37 @@ export async function generateStaticParams() {
   }
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.midnightdreams.online'
+
 export async function generateMetadata({ params }: PageProps) {
   const dream = await getDreamPost(params.slug)
 
   if (!dream) {
-    return {
-      title: 'Dream Not Found',
-    }
+    return { title: 'Dream Not Found' }
   }
 
   const imageUrl = dream.coverImage
     ? urlFor(dream.coverImage).width(1200).height(630).url()
     : null
 
+  const canonicalUrl = `${SITE_URL}/dreams/${params.slug}`
+
   return {
-    title: `${dream.title} | Dreamscape`,
+    title: dream.title,
     description: dream.excerpt || 'A dream story from Dreamscape',
+    keywords: dream.tags ?? [],
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: dream.title,
       description: dream.excerpt,
-      images: imageUrl ? [{ url: imageUrl }] : [],
+      url: canonicalUrl,
+      siteName: 'Dreamscape',
+      images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630, alt: dream.title }] : [],
       type: 'article',
       publishedTime: dream.publishedAt,
+      authors: dream.author?.name ? [dream.author.name] : [],
     },
     twitter: {
       card: 'summary_large_image',
@@ -86,8 +95,33 @@ export default async function DreamPostPage({ params }: PageProps) {
     ? urlFor(dream.author.avatar).width(100).height(100).url()
     : null
 
+  const canonicalUrl = `${SITE_URL}/dreams/${params.slug}`
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: dream.title,
+    description: dream.excerpt || '',
+    url: canonicalUrl,
+    datePublished: dream.publishedAt,
+    image: coverImageUrl || undefined,
+    author: dream.author?.name
+      ? { '@type': 'Person', name: dream.author.name }
+      : { '@type': 'Organization', name: 'Dreamscape' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Dreamscape',
+      url: SITE_URL,
+    },
+    keywords: dream.tags?.join(', ') || '',
+  }
+
   return (
     <article className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Cover Image */}
       {coverImageUrl && (
         <div className="relative w-full h-[60vh] -mt-16">
